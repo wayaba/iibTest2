@@ -20,8 +20,8 @@ pipeline {
 					}
 				}
 				steps{
-						echo "EJECUTO ${params.mqsihome}/server/bin/mqsipackagebar -w ${params.workspacesdir} -b ${params.barname} -k ${params.appname}"
-						sh "${params.mqsihome}/server/bin/mqsipackagebar -w ${params.workspacesdir} -b ${params.barname} -k ${params.appname}"
+						echo "EJECUTO ${params.mqsihome}/server/bin/mqsipackagebar -w ${params.workspacesdir} -a ${params.barname} -k ${params.appname}"
+						sh "${params.mqsihome}/server/bin/mqsipackagebar -w ${params.workspacesdir} -a ${params.barname} -k ${params.appname}"
 					}
 					
 			}
