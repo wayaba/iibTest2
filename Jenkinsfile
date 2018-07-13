@@ -12,6 +12,22 @@ pipeline {
 
 	stages {
 		
+		stage('SonarQube analysis') {
+			steps {
+				script {
+					def scannerHome = tool 'sonnar-jenkins'
+					withSonarQubeEnv('sonarqube') {
+						sh "${scannerHome}/bin/sonar-scanner \
+										-Dsonar.projectKey=esqpipeline \
+										-Dsonar.projectname=Esqpipeline \
+										-Dsonar.projectVersion=1 \
+										-Dsonar.sources=. \
+										-Dsonar.language=esql"
+					}
+				}
+			}
+		}
+		
 		stage('Compilacion')
 			{
 				agent {
