@@ -59,7 +59,7 @@ pipeline {
 		stage('Test')
 			{
 				agent {
-					docker { image 'postman/newman_ubuntu1404' 
+					docker { image 'postman/newman_ubuntu1404:latest' 
 							args 'run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
 					}
 				}
