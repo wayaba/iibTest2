@@ -60,11 +60,12 @@ pipeline {
 			{
 				agent {
 					docker { image 'postman/newman_ubuntu1404' 
+							args 'run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
 					}
 				}
 				steps{
 						echo "Ejecuto el newman para llamar a la collection de postman"
-						sh 'run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
+						//sh 'docker run -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
 					}
 				
 			}
