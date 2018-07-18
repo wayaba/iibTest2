@@ -58,17 +58,11 @@ pipeline {
 		
 		stage('Test')
 			{
-			/*
-				agent {
-					docker { image 'postman/newman_ubuntu1404:latest' }
-				}
-				*/
 				steps{
 						echo "Ejecuto el newman para llamar a la collection de postman"
-						//sh 'docker run -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
-						sh 'docker run -t --name postmantemp  postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
+						//sh 'docker run -t --name postmantemp  postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
+						sh 'docker run -t --name postmantemp  postman/newman_ubuntu1404 run /var/jenkins_home/workspace/prueba2iib/postman_collection.json --disable-unicode'
 						sh 'docker rm postmantemp'
-						//sh 'newman run /var/jenkins_home/workspace/prueba2iib/postman_collection.json --disable-unicode'
 					}
 				
 			}
