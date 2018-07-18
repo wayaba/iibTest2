@@ -1,0 +1,68 @@
+{
+	"id": "48fe8e9f-c2bd-c229-5008-90543d459e6c",
+	"name": "TestMascotas",
+	"description": "",
+	"order": [
+		"6b304f79-836d-7a4f-863c-8fae860dee20",
+		"2e8f0fc9-9824-08f8-c92d-1c7bedda6767"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1531831653094,
+	"owner": "1469481",
+	"public": false,
+	"requests": [
+		{
+			"id": "2e8f0fc9-9824-08f8-c92d-1c7bedda6767",
+			"headers": "",
+			"headerData": [],
+			"url": "http://192.168.99.100:7801/v2/pet",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "48fe8e9f-c2bd-c229-5008-90543d459e6c",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://192.168.99.100:7801/v2/pet",
+			"description": "Pruebo el get all",
+			"descriptionFormat": "html",
+			"time": 1531832122847,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\n\ntests[\"Body is correct\"] = responseBody.has(\"Fido\");",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "6b304f79-836d-7a4f-863c-8fae860dee20",
+			"headers": "",
+			"headerData": [],
+			"url": "http://192.168.99.100:7801/v2/pet/getPetsById?petId=2",
+			"queryParams": [
+				{
+					"key": "petId",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1531832107047,
+			"name": "http://192.168.99.100:7801/v2/pet/getPetsById?petId=2",
+			"description": "Test servicio Mascotas",
+			"collectionId": "48fe8e9f-c2bd-c229-5008-90543d459e6c",
+			"responses": []
+		}
+	]
+}
