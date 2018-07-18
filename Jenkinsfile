@@ -11,7 +11,7 @@ pipeline {
     }
 
 	stages {
-		
+		/*
 		stage('SonarQube analysis') {
 			steps {
 				script {
@@ -68,6 +68,18 @@ pipeline {
 						sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
 					}
 				
+			}
+			*/
+			stage('Testing')
+			{
+				
+				steps{
+					sh 'docker run -v ~/var/jenkins_home/workspace/prueba2iib:/etc/newman -t postman/newman_ubuntu1404 run "postman_collection.json"'
+					
+						//echo "EJECUTO ${params.mqsihome}/server/bin/mqsideploy -i http://192.168.99.100 -p 4415 -a ${params.barname} -e ungrupo"
+						//sh "${params.mqsihome}/server/bin/mqsideploy -i 192.168.99.100 -p 4415 -a ${params.barname} -e ungrupo"
+					}
+					
 			}
 	}
 }
