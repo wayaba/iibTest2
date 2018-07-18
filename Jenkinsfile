@@ -63,8 +63,8 @@ pipeline {
 							try{
 								sh 'docker rm postmantemp'
 							}
-							finally{
-								echo 'borro por las dudas'
+							catch (err){
+								echo "falla el rm porque no existe el container pero sigo..."
 							}
 						}
 						echo "Ejecuto el newman para llamar a la collection de postman"
