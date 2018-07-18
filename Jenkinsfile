@@ -74,7 +74,8 @@ pipeline {
 			{
 				
 				steps{
-					sh 'docker run -v ~/var/jenkins_home/workspace/prueba2iib:/etc/newman -t postman/newman_ubuntu1404 run "postman_collection.json"'
+					sh 'cat /var/jenkins_home/workspace/prueba2iib/postman_collection.json'
+					sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t postman/newman_ubuntu1404 run "postman_collection.json"'
 					
 						//echo "EJECUTO ${params.mqsihome}/server/bin/mqsideploy -i http://192.168.99.100 -p 4415 -a ${params.barname} -e ungrupo"
 						//sh "${params.mqsihome}/server/bin/mqsideploy -i 192.168.99.100 -p 4415 -a ${params.barname} -e ungrupo"
