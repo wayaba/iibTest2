@@ -75,7 +75,7 @@ pipeline {
 				
 				steps{
 					
-					sh 'newman run /var/jenkins_home/workspace/prueba2iib/postman_collection.json'
+					sh 'newman run /var/jenkins_home/workspace/Pipeline1/postman_collection.json'
 					}
 					
 			}
