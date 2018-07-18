@@ -27,7 +27,7 @@ pipeline {
 				}
 			}
 		}
-		/*
+		
 		stage('Compilacion')
 			{
 				agent {
@@ -55,7 +55,7 @@ pipeline {
 					}
 					
 			}
-		*/
+		
 		stage('Test')
 			{
 				steps{
