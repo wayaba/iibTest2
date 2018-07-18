@@ -61,7 +61,7 @@ pipeline {
 				steps{
 						echo "Ejecuto el newman para llamar a la collection de postman"
 						//sh 'docker run -t --name postmantemp  postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode'
-						sh 'docker run -v ~/collections:/var/jenkins_home/workspace/prueba2iib -t --name postmantemp   postman/newman_ubuntu1404 run postman_collection.json --disable-unicode'
+						sh 'docker run -v ~/var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp   postman/newman_ubuntu1404 run postman_collection.json --disable-unicode'
 						sh 'docker rm postmantemp'
 					}
 				
