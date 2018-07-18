@@ -59,24 +59,13 @@ pipeline {
 		stage('Test')
 			{
 				steps{
-				/*
-						script {
-							try{
-								sh 'docker rm postmantemp'
-							}
-							catch (err){
-								echo "falla el rm porque no existe el container pero sigo..."
-							}
-						}
-						*/
 						echo "Ejecuto el newman para llamar a la collection de postman"
 						//sh 'docker run -t --name postmantemp  postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
 						//sh 'docker run -v ~/var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp   postman/newman_ubuntu1404 run postman_collection.json --disable-unicode'
 						//sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp postman/newman_ubuntu1404 run postman_collection.json'
 						//sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp postman/newman_ubuntu1404 -c postman_collection'
 						//sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp postman/newman_ubuntu1404 run postman_collection.json'
-						//sh 'docker rm postmantemp'
-						sh 'docker run --rm -t --name postmantemp  postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
+						sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
 					}
 				
 			}
