@@ -65,7 +65,7 @@ pipeline {
 						//sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp postman/newman_ubuntu1404 run postman_collection.json'
 						//sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp postman/newman_ubuntu1404 -c postman_collection'
 						//sh 'docker run -v /var/jenkins_home/workspace/prueba2iib:/etc/newman -t --name postmantemp postman/newman_ubuntu1404 run postman_collection.json'
-						sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
+						sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6 --disable-unicode --color'
 					}
 				
 			}
