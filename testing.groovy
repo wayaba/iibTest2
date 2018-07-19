@@ -1,12 +1,10 @@
 #!groovy
 
-def firstTest(){    
-    stage('build'){
-      echo "Second stage"
-    }
-    
-    stage('Cleanup workspace'){
-      echo "Hola stage"
-    }
+def exampleMethod() {
+    println("exampleMethod")
+}
+
+def otherExampleMethod() {
+    println("otherExampleMethod")
 }
 return this
