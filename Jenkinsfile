@@ -2,9 +2,7 @@
 pipeline {
 
 	agent any
-	tools { 
-        maven 'maven-jenkins' 
-    }
+
 	parameters {
         string(name: 'mqsihome', defaultValue: '/opt/ibm/iib-10.0.0.11', description: '')
 		string(name: 'workspacesdir', defaultValue: '/var/jenkins_home/workspace/prueba2iib', description: '')
@@ -12,20 +10,6 @@ pipeline {
 		string(name: 'appname', defaultValue: 'ApiMascotas', description: '')
     }
 
-	stages {
-		stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-				sh '''
-                    mvn compile
-                    
-                '''
-            }
-        }
-		/*
 		stage('SonarQube analysis') {
 			steps {
 				script {
@@ -69,29 +53,17 @@ pipeline {
 					}
 					
 			}
-		*/
+
 		stage('Test')
 			{
-			steps {
-              script {
-					// point to exact source file
-						def example = load "${params.workspacesdir}/testing.groovy"
-
-						example.generateManifest()
-					}
-				}
-				/*
+			
 				steps{
-						//echo "Ejecuto el newman para llamar a la collection de postman"						
-						//sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
+						echo "Ejecuto el newman para llamar a la collection de postman"						
+						sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
 						//sh 'newman run /var/jenkins_home/workspace/Pipeline1/postman_collection.json'
 						
-						// point to exact source file
-						def example = load "${params.workspacesdir}/testing.Groovy"
-
-						example.generateManifest()
 					}
-				*/	
+			
 				
 			}
 	}
