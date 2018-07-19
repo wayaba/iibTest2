@@ -3,8 +3,7 @@ pipeline {
 
 	agent any
 	tools { 
-        maven 'Maven 3.3.9' 
-        jdk 'jdk8' 
+        maven 'maven-jenkins' 
     }
 	parameters {
         string(name: 'mqsihome', defaultValue: '/opt/ibm/iib-10.0.0.11', description: '')
