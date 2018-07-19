@@ -10,6 +10,7 @@ pipeline {
 		string(name: 'appname', defaultValue: 'ApiMascotas', description: '')
     }
 
+	stages {
 		stage('SonarQube analysis') {
 			steps {
 				script {
