@@ -19,7 +19,7 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
-				sh 'mvn clean test-compile'
+				sh 'mvn -f ${params.workspacesdir}'
             
             }
         }
