@@ -2,7 +2,10 @@
 pipeline {
 
 	agent any
-	
+	tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
 	parameters {
         string(name: 'mqsihome', defaultValue: '/opt/ibm/iib-10.0.0.11', description: '')
 		string(name: 'workspacesdir', defaultValue: '/var/jenkins_home/workspace/prueba2iib', description: '')
@@ -11,6 +14,14 @@ pipeline {
     }
 
 	stages {
+		stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
 		/*
 		stage('SonarQube analysis') {
 			steps {
