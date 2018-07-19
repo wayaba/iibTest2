@@ -61,7 +61,7 @@ pipeline {
 			steps {
               script {
 					// point to exact source file
-						def example = load "${params.workspacesdir}/testing.Groovy"
+						def example = load "${params.workspacesdir}/testing.groovy"
 
 						example.generateManifest()
 					}
