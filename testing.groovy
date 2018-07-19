@@ -1,6 +1,7 @@
-public groovyFileMethod() {
-     stage('build') {
-          echo "hola"
-     }
+#!/usr/bin/env groovy
+
+def generateManifest() {
+   sh "..."
+   echo "..."
 }
 return this;

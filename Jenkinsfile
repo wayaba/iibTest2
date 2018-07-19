@@ -58,10 +58,14 @@ pipeline {
 		*/
 		stage('Test')
 			{
+			steps {
+              script {
 					// point to exact source file
 						def example = load "${params.workspacesdir}/testing.Groovy"
 
-						example.groovyFileMethod()
+						example.generateManifest()
+					}
+				}
 				/*
 				steps{
 						//echo "Ejecuto el newman para llamar a la collection de postman"						
@@ -71,7 +75,7 @@ pipeline {
 						// point to exact source file
 						def example = load "${params.workspacesdir}/testing.Groovy"
 
-						example.groovyFileMethod()
+						example.generateManifest()
 					}
 				*/	
 				
