@@ -20,7 +20,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
 				sh '''
-                    mvn -f pom.xml
+                    mvn compile
                     
                 '''
             }
