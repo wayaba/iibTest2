@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
-def generateManifest() {
-   sh "..."
+def generateManifest() {   
    echo "..."
 }
 return this;
