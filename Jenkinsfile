@@ -19,7 +19,7 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
-				sh 'mvn -f ${params.workspacesdir}'
+				sh 'mvn -f "${params.workspacesdir}"'
             
             }
         }
