@@ -66,7 +66,7 @@ pipeline {
 						// point to exact source file
 						def example = load "${params.workspacesdir}/testing.Groovy"
 
-						example.exampleMethod()
+						example.groovyFileMethod()
 					}
 				
 			}

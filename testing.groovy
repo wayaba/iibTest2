@@ -1,10 +1,6 @@
-#!groovy
-
-def exampleMethod() {
-    println("exampleMethod")
+public groovyFileMethod() {
+     stage('build') {
+          echo "hola"
+     }
 }
-
-def otherExampleMethod() {
-    println("otherExampleMethod")
-}
-return this
+return this;
