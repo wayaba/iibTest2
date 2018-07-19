@@ -1,9 +1,6 @@
 #!groovy
 
-def firstTest(){
-
-  node('test-node'){
-    
+def firstTest(){    
     stage('build'){
       echo "Second stage"
     }
@@ -11,6 +8,5 @@ def firstTest(){
     stage('Cleanup workspace'){
       echo "Hola stage"
     }
-  }
 }
 return this
