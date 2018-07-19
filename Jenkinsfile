@@ -20,7 +20,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
 				sh '''
-                    mvn -f "${params.workspacesdir}/pom.xml"
+                    mvn -f pom.xml
                     
                 '''
             }
