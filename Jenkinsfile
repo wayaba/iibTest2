@@ -11,7 +11,7 @@ pipeline {
     }
 
 	stages {
-		
+		/*
 		stage('SonarQube analysis') {
 			steps {
 				script {
@@ -55,13 +55,18 @@ pipeline {
 					}
 					
 			}
-		
+		*/
 		stage('Test')
 			{
 				steps{
-						echo "Ejecuto el newman para llamar a la collection de postman"						
-						sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
+						//echo "Ejecuto el newman para llamar a la collection de postman"						
+						//sh 'docker run --rm -t postman/newman_ubuntu1404 run https://www.getpostman.com/collections/968a33a4326a6494ede6'
 						//sh 'newman run /var/jenkins_home/workspace/Pipeline1/postman_collection.json'
+						
+						// point to exact source file
+						def example = load "${params.workspacesdir}/testing.Groovy"
+
+						example.firstTest()
 					}
 				
 			}
